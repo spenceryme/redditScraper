@@ -21,11 +21,25 @@ public class Main {
         URL = "http://www.reddit.com";
         System.out.println();
         System.out.println(" -- Reddit Scrape! -- ");
+        checkFrontPage();
         connect(URL);
         getContent(site);
         getRanks();
         getSubReddits();
         printData();
+    }
+
+    public static void checkFrontPage() throws IOException {
+
+        if (URL == "http://www.reddit.com")
+        {
+            System.out.println("Front Page Detected.");
+            connect(URL);
+            getContent(site);
+            getRanks();
+            getSubReddits();
+            printDataFrontPage();
+        }
     }
 
     private static void getSubReddits() {
@@ -48,6 +62,24 @@ public class Main {
             System.out.print("Title: " + linktext.get(i) + "\n");
             System.out.print("Link: " + "[" + link.get(i) + "]" + "\n");
             System.out.println("User/SubReddit: " +subReddit.get(i)+ "\n");
+        }
+        linktext.clear();
+        link.clear();
+        ranked.clear();
+        subReddit.clear();
+        choice();
+    }
+
+    private static void printDataFrontPage()
+    {
+        System.out.println("Printing Data now...\n");
+        for (int i = 0; i < ranked.size(); i++)
+        {
+            System.out.println("--------");
+            System.out.print("Rank: " + ranked.get(i)+ "\n");
+            System.out.print("Title: " + linktext.get(9 + i) + "\n");
+            System.out.print("Link: " + "[" + link.get(9 + i) + "]" + "\n");
+            System.out.println("User/SubReddit: " +subReddit.get(9 + i)+ "\n");
         }
         linktext.clear();
         link.clear();
@@ -85,6 +117,7 @@ public class Main {
     }
 
     public static void getStatistics() {
+        //System.out.print("Statisitcs!");
     }
 
     public static void getRanks() {
@@ -132,7 +165,7 @@ public class Main {
         }
         if (Integer.parseInt(selection) == 2)
         {
-            System.out.println("Subreddit?");
+            System.out.println("Which subreddit Subreddit?");
             BufferedReader br2 = new BufferedReader(new InputStreamReader(System.in));
             String subreddit = null;
             try {
