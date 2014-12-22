@@ -57,8 +57,8 @@ public class Main {
         System.out.println("Printing Data now...\n");
         for (int i = 0; i < ranked.size(); i++)
         {
-            System.out.println("--------");
             System.out.print("Rank: " + ranked.get(i)+ "\n");
+            System.out.println("--------");
             System.out.print("Title: " + linktext.get(i) + "\n");
             System.out.print("Link: " + "[" + link.get(i) + "]" + "\n");
             System.out.println("User/SubReddit: " +subReddit.get(i)+ "\n");
@@ -75,8 +75,8 @@ public class Main {
         System.out.println("Printing Data now...\n");
         for (int i = 0; i < ranked.size(); i++)
         {
-            System.out.println("--------");
             System.out.print("Rank: " + ranked.get(i)+ "\n");
+            System.out.println("--------");
             System.out.print("Title: " + linktext.get(9 + i) + "\n");
             System.out.print("Link: " + "[" + link.get(9 + i) + "]" + "\n");
             System.out.println("User/SubReddit: " +subReddit.get(9 + i)+ "\n");
@@ -132,7 +132,6 @@ public class Main {
     }
 
     public static void choice () {
-        System.out.println("");
         System.out.println("--------");
         System.out.println("");
         System.out.println("|----------------------|");
