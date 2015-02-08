@@ -7,6 +7,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+// Main Method Setup for the Default Run.
+
 public class Main {
     public static Document site;
     public static List<String> linktext = new ArrayList<String>();
@@ -23,6 +25,7 @@ public class Main {
         System.out.println(" -- Reddit Scrape! -- ");
         checkFrontPage();
         connect(URL);
+
         getContent(site);
         getRanks();
         getSubReddits();
