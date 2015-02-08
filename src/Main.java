@@ -40,6 +40,14 @@ public class Main {
             getSubReddits();
             printDataFrontPage();
         }
+        else
+        {
+            connect(URL);
+            getContent(site);
+            getRanks();
+            getSubReddits();
+            printData();
+        }
     }
 
     private static void getSubReddits() {
@@ -54,7 +62,7 @@ public class Main {
     }
 
     private static void printData() {
-        System.out.println("Printing Data now...\n");
+        //System.out.println("Printing Data now...\n");
         for (int i = 0; i < ranked.size(); i++)
         {
             System.out.print("Rank: " + ranked.get(i)+ "\n");
@@ -77,9 +85,9 @@ public class Main {
         {
             System.out.print("Rank: " + ranked.get(i)+ "\n");
             System.out.println("--------");
-            System.out.print("Title: " + linktext.get(9 + i) + "\n");
-            System.out.print("Link: " + "[" + link.get(9 + i) + "]" + "\n");
-            System.out.println("User/SubReddit: " +subReddit.get(9 + i)+ "\n");
+            System.out.print("Title: " + linktext.get(10 + i) + "\n");
+            System.out.print("Link: " + "[" + link.get(10 + i) + "]" + "\n");
+            System.out.println("User/SubReddit: " +subReddit.get(10 + i)+ "\n");
         }
         linktext.clear();
         link.clear();
@@ -89,6 +97,7 @@ public class Main {
     }
 
     public static void connect(String URL) throws IOException {
+        System.out.println(URL);
         site = Jsoup.connect(URL).get();
         System.out.println("This is the URL: " + URL);
         System.out.println("This is the title: " + (site.title()) + "\n");
@@ -131,7 +140,8 @@ public class Main {
         }
     }
 
-    public static void choice () {
+    public static void
+    choice () {
         System.out.println("--------");
         System.out.println("");
         System.out.println("|----------------------|");
@@ -189,8 +199,6 @@ public class Main {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            /** This is the URL tried **/
-            //System.out.println("Tried : " + URL);
             getContent(site);
             getRanks();
             getSubReddits();
